@@ -223,7 +223,20 @@ public class Nokia{
                             case 5  -> System.out.println("Edit...\n");
                             case 6  -> System.out.println("Assign Tone...\n");
                             case 7  -> System.out.println("Send b'card...\n");
-                            case 8  -> {}
+                            case 8  -> {
+                                while (true) {
+                                    System.out.println(phoneBookOptions);
+                                    int optChoice = sc.nextInt();
+
+				    				if (optChoice == 0) break;
+
+                                    switch (optChoice) {
+                                        case 1  -> System.out.println("Type of View...\n");
+                                        case 2  -> System.out.println("Memory Status...\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
                             case 9  -> System.out.println("Speed Dials...\n");
                             case 10 -> System.out.println("Voice Tags...\n");
                             default -> System.out.println("Invalid option. Try again.\n");
@@ -246,7 +259,50 @@ public class Nokia{
                             case 4  -> System.out.println("Picture Messages...\n");
                             case 5  -> System.out.println("Templates...\n");
                             case 6  -> System.out.println("Smileys...\n");
-                            case 7  -> {}
+                            case 7  -> {
+                                while (true) {
+                                    System.out.println(messageSettings);
+                                    int msgSetChoice = sc.nextInt();
+ 
+									
+                                    if (msgSetChoice == 0) break;
+
+                                    switch (msgSetChoice) {
+                                        case 1 -> {
+                                            while (true) {
+                                                System.out.println(setMessageSettings);
+                                                int setChoice = sc.nextInt();
+
+												if (setChoice == 0) break;
+
+
+                                                switch (setChoice) {
+                                                    case 1  -> System.out.println("Message Centre Number...\n");
+                                                    case 2  -> System.out.println("Messages Sent As...\n");
+                                                    case 3  -> System.out.println("Message Validity...\n");
+                                                    default -> System.out.println("Invalid option. Try again.\n");
+                                                }
+                                            }
+                                        }
+                                        case 2 -> {
+                                            while (true) {
+                                                System.out.println(commonMessageSettings);
+                                                int comChoice = sc.nextInt();
+
+                                                if (comChoice == 0) break;
+
+                                                switch (comChoice) {
+                                                    case 1  -> System.out.println("Delivery Reports...\n");
+                                                    case 2  -> System.out.println("Reply via Same Centre...\n");
+                                                    case 3  -> System.out.println("Character Support...\n");
+                                                    default -> System.out.println("Invalid option. Try again.\n");
+                                                }
+                                            }
+                                        }
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
                             case 8  -> System.out.println("Info Service...\n");
                             case 9  -> System.out.println("Voice Mailbox Number...\n");
                             case 10 -> System.out.println("Service Command Editor...\n");
@@ -256,7 +312,76 @@ public class Nokia{
                 }
  
                 case 3 -> System.out.println("Opening Chat...\n");
-  
+ 
+                case 4 -> {
+                    while (true) {
+                        System.out.println(callRegister);
+                        int crChoice = sc.nextInt();
+ 
+
+                        if (crChoice == 0) break;
+
+                        switch (crChoice) {
+                            case 1  -> System.out.println("Missed Calls...\n");
+                            case 2  -> System.out.println("Received Calls...\n");
+                            case 3  -> System.out.println("Dialed Numbers...\n");
+                            case 4  -> System.out.println("Erase Recent Call Lists...\n");
+                            case 5  -> {
+                                while (true) {
+                                    System.out.println(callDuration);
+                                    int cdChoice = sc.nextInt();
+
+                                    if (cdChoice == 0) break;
+
+
+                                    switch (cdChoice) {
+                                        case 1  -> System.out.println("Last Call Duration...\n");
+                                        case 2  -> System.out.println("All Calls Duration...\n");
+                                        case 3  -> System.out.println("Received Calls Duration...\n");
+                                        case 4  -> System.out.println("Dialed Calls Duration...\n");
+                                        case 5  -> System.out.println("Timers Cleared.\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
+                            case 6  -> {
+                                while (true) {
+                                    System.out.println(callCosts);
+                                    int ccChoice = sc.nextInt();
+
+
+                                    if (ccChoice == 0) break;
+
+
+                                    switch (ccChoice) {
+                                        case 1  -> System.out.println("Last Call Cost...\n");
+                                        case 2  -> System.out.println("All Calls Cost...\n");
+                                        case 3  -> System.out.println("Counters Cleared.\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
+                            case 7  -> {
+                                while (true) {
+                                    System.out.println(costSettings);
+                                    int csChoice = sc.nextInt();
+
+                                    if (csChoice == 0) break;
+
+
+                                    switch (csChoice) {
+                                        case 1  -> System.out.println("Call Cost Limit...\n");
+                                        case 2  -> System.out.println("Costs In...\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
+                            case 8  -> System.out.println("Prepaid Credit...\n");
+                            default -> System.out.println("Invalid option. Try again.\n");
+                        }
+                    }
+                }
+ 
                 case 5 -> {
                     while (true) {
                         System.out.println(tones);
@@ -281,6 +406,75 @@ public class Nokia{
                     }
                 }
  
+                case 6 -> {
+                    while (true) {
+                        System.out.println(settings);
+                        int settChoice = sc.nextInt();
+ 
+                        if (settChoice == 0) break;
+
+                        switch (settChoice) {
+                            case 1 -> {
+                                while (true) {
+                                    System.out.println(callSettings);
+                                    int csChoice = sc.nextInt();
+
+                                    if (csChoice == 0) break;
+
+                                    switch (csChoice) {
+                                        case 1  -> System.out.println("Automatic Redial...\n");
+                                        case 2  -> System.out.println("Speed Dialing...\n");
+                                        case 3  -> System.out.println("Call Waiting Options...\n");
+                                        case 4  -> System.out.println("Own Number Sending...\n");
+                                        case 5  -> System.out.println("Phone Line In Use...\n");
+                                        case 6  -> System.out.println("Automatic Answer...\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
+                            case 2 -> {
+                                while (true) {
+                                    System.out.println(phoneSettings);
+                                    int psChoice = sc.nextInt();
+
+                                    if (psChoice == 0) break;
+
+
+                                    switch (psChoice) {
+                                        case 1  -> System.out.println("Language...\n");
+                                        case 2  -> System.out.println("Cell Info Display...\n");
+                                        case 3  -> System.out.println("Welcome Note...\n");
+                                        case 4  -> System.out.println("Network Selection...\n");
+                                        case 5  -> System.out.println("Lights...\n");
+                                        case 6  -> System.out.println("Confirm SIM Service Actions...\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
+                            case 3 -> {
+                                while (true) {
+                                    System.out.println(securitySettings);
+                                    int ssChoice = sc.nextInt();
+
+                                    if (ssChoice == 0) break;
+
+
+                                    switch (ssChoice) {
+                                        case 1  -> System.out.println("PIN Code Request...\n");
+                                        case 2  -> System.out.println("Call Barring Service...\n");
+                                        case 3  -> System.out.println("Fixed Dialing...\n");
+                                        case 4  -> System.out.println("Closed User Group...\n");
+                                        case 5  -> System.out.println("Phone Security...\n");
+                                        case 6  -> System.out.println("Change Access Codes...\n");
+                                        default -> System.out.println("Invalid option. Try again.\n");
+                                    }
+                                }
+                            }
+                            case 4  -> System.out.println("Restoring Factory Settings...\n");
+                            default -> System.out.println("Invalid option. Try again.\n");
+                        }
+                    }
+                }
  
                 case 7  -> System.out.println("Opening Call Divert...\n");
  
