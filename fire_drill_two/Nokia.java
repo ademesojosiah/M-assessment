@@ -129,7 +129,7 @@ public class Nokia{
 								     """;
 		// 5.
 				 String tones = """
-				       	---- Tones ----
+				       		---- Tones ----
 						Press 1 -> For Ringing tone
 						Press 2 -> For Ringing volume
 						Press 3 -> For Incoming call alert 
@@ -145,7 +145,7 @@ public class Nokia{
 
 		// 6.
 				 String settings = """
-				       	   ---- Settings ----
+				       	   	   ---- Settings ----
 						   Press 1 -> For Call Settings
 						   Press 2 -> For Phone Settings
 						   Press 3 -> For Security Settings 
@@ -190,7 +190,7 @@ public class Nokia{
 
 		// 11.
 				 String clock = """
-				       	   ---- Clock ----
+				       	   	   ---- Clock ----
 						   Press 1 -> For Alarm Clock
 						   Press 2 -> For Clock setting
 						   Press 3 -> For Date Setting 
@@ -200,7 +200,124 @@ public class Nokia{
 						   Press 0 -> To go back	
 
 						   """;
-							
+				
+	    while (true) {
+            System.out.println(firstPrompt);
+            int choice = sc.nextInt();
+ 
+            switch (choice) {
+ 
+                case 1 -> {
+                    while (true) {
+                        System.out.println(phoneBook);
+                        int phoneBookChoice = sc.nextInt();
+ 
+                        if (phoneBookChoice == 0) break;
+
+
+                        switch (phoneBookChoice) {
+                            case 1  -> System.out.println("Searching...\n");
+                            case 2  -> System.out.println("Service Numbers...\n");
+                            case 3  -> System.out.println("Add Name...\n");
+                            case 4  -> System.out.println("Erase...\n");
+                            case 5  -> System.out.println("Edit...\n");
+                            case 6  -> System.out.println("Assign Tone...\n");
+                            case 7  -> System.out.println("Send b'card...\n");
+                            case 8  -> {}
+                            case 9  -> System.out.println("Speed Dials...\n");
+                            case 10 -> System.out.println("Voice Tags...\n");
+                            default -> System.out.println("Invalid option. Try again.\n");
+                        }
+                    }
+                }
+ 
+                case 2 -> {
+                    while (true) {
+                        System.out.println(messages);
+                        int msgChoice = sc.nextInt();
+ 
+                        if (msgChoice == 0) break;
+
+
+                        switch (msgChoice) {
+                            case 1  -> System.out.println("Write Message...\n");
+                            case 2  -> System.out.println("Inbox...\n");
+                            case 3  -> System.out.println("Outbox...\n");
+                            case 4  -> System.out.println("Picture Messages...\n");
+                            case 5  -> System.out.println("Templates...\n");
+                            case 6  -> System.out.println("Smileys...\n");
+                            case 7  -> {}
+                            case 8  -> System.out.println("Info Service...\n");
+                            case 9  -> System.out.println("Voice Mailbox Number...\n");
+                            case 10 -> System.out.println("Service Command Editor...\n");
+                            default -> System.out.println("Invalid option. Try again.\n");
+                        }
+                    }
+                }
+ 
+                case 3 -> System.out.println("Opening Chat...\n");
+  
+                case 5 -> {
+                    while (true) {
+                        System.out.println(tones);
+                        int toneChoice = sc.nextInt();
+ 
+
+                        if (toneChoice == 0) break;
+
+
+                        switch (toneChoice) {
+                            case 1  -> System.out.println("Ringing Tone...\n");
+                            case 2  -> System.out.println("Ringing Volume...\n");
+                            case 3  -> System.out.println("Incoming Call Alert...\n");
+                            case 4  -> System.out.println("Composer...\n");
+                            case 5  -> System.out.println("Message Alert Tone...\n");
+                            case 6  -> System.out.println("Keypad Tones...\n");
+                            case 7  -> System.out.println("Warning and Games Tones...\n");
+                            case 8  -> System.out.println("Vibrating Alert...\n");
+                            case 9  -> System.out.println("Screen Saver...\n");
+                            default -> System.out.println("Invalid option. Try again.\n");
+                        }
+                    }
+                }
+ 
+ 
+                case 7  -> System.out.println("Opening Call Divert...\n");
+ 
+                case 8  -> System.out.println("Opening Games...\n");
+ 
+                case 9  -> System.out.println("Opening Calculator...\n");
+ 
+                case 10 -> System.out.println("Opening Reminders...\n");
+ 
+                case 11 -> {
+                    while (true) {
+                        System.out.println(clock);
+                        int clockChoice = sc.nextInt();
+ 
+
+                        if (clockChoice == 0) break;
+
+                        switch (clockChoice) {
+                            case 1  -> System.out.println("Alarm Clock...\n");
+                            case 2  -> System.out.println("Clock Setting...\n");
+                            case 3  -> System.out.println("Date Setting...\n");
+                            case 4  -> System.out.println("Stopwatch...\n");
+                            case 5  -> System.out.println("Countdown Timer...\n");
+                            case 6  -> System.out.println("Auto Update of Date and Time...\n");
+                            default -> System.out.println("Invalid option. Try again.\n");
+                        }
+                    }
+                }
+ 
+                case 12 -> System.out.println("Opening Profiles...\n");
+ 
+                case 13 -> System.out.println("Opening SIM Services...\n");
+ 
+                default -> System.out.println("Invalid option. Try again.\n");
+            }
+        }
+			
 
 		
 		
