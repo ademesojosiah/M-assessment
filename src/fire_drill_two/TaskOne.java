@@ -1,6 +1,8 @@
+package fire_drill_two;
+
 import java.util.Scanner;
 
-public class TaskFive{
+public class TaskOne{
 
 	public static void main(String[] arg){
 
@@ -8,7 +10,7 @@ public class TaskFive{
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("Enter 10 scores and get the average");
+		System.out.println("Enter 10 scores and get the sum");
 		
 
 		int i = 0;
@@ -16,17 +18,15 @@ public class TaskFive{
 		while(i++ < 10){
 			System.out.printf("Enter score %d: ", i);
 			int number = sc.nextInt();
-
-			if(number % 2 == 0){
-				sum = sum + number;
-			};
+			sum = sum + number;
 		}
 
-				
-		System.out.print("The sum of the even numbers is  "+ sum);
-
+		
+		
+		System.out.println("The sum is " + sum);
 
 		sc.close();
+
 
 	}
 

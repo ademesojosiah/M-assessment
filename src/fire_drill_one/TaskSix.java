@@ -1,6 +1,6 @@
+package fire_drill_one;
 
-
-public class TaskFive{
+public class TaskSix{
 
 	public static void main (String[] arg){
 		
@@ -8,13 +8,16 @@ public class TaskFive{
 	while(i++ < 10){
 		int remainder = i%4;
 		if(remainder == 0){
+
 			int j = 0;
+			int multiple = 1;
+
 			while(j++ < 5){
-				System.out.print(i);
+			multiple = multiple * i;
+					
+		System.out.printf("%d ", multiple);
 
 			}
-			
-			System.out.print(" ");
 		}
 	}
 

@@ -1,6 +1,8 @@
+package fire_drill_two;
+
 import java.util.Scanner;
 
-public class TaskNine{
+public class TaskFour{
 
 	public static void main(String[] arg){
 
@@ -17,13 +19,13 @@ public class TaskNine{
 			System.out.printf("Enter score %d: ", i);
 			int number = sc.nextInt();
 
-			if(number > 0 && number < 100){
+			if(i % 2 == 0){
 				sum = sum + number;
 			};
-
 		}
+
 				
-		System.out.printf("The sum of valid scores between 0-100 is : %d", sum);
+		System.out.print("The sum of the even indexes is  "+ sum);
 
 		sc.close();
 

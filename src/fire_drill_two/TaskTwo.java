@@ -1,6 +1,8 @@
+package fire_drill_two;
+
 import java.util.Scanner;
 
-public class TaskTen{
+public class TaskTwo{
 
 	public static void main(String[] arg){
 
@@ -13,23 +15,20 @@ public class TaskTen{
 
 		int i = 0;
 		float sum = 0;
-		int numberOfValidNumbers = 0;
 		while(i++ < 10){
 			System.out.printf("Enter score %d: ", i);
 			int number = sc.nextInt();
-
-			if(number > 0 && number < 100){
-				sum = sum + number;
-				numberOfValidNumbers = numberOfValidNumbers + 1;
-			};
-
+			sum = sum + number;
 		}
 
-		float average = sum/numberOfValidNumbers;
-				
-		System.out.printf("The average from task 9 is : %.2f", average);
+		
+		float average = sum/10;
+		
+		System.out.println("The average is " + average);
 
 		sc.close();
+
+
 
 	}
 

@@ -1,6 +1,6 @@
+package fire_drill_one;
 
-
-public class TaskSix{
+public class TaskSeven{
 
 	public static void main (String[] arg){
 		
@@ -11,13 +11,14 @@ public class TaskSix{
 
 			int j = 0;
 			int multiple = 1;
-
+			int sum = 0;
 			while(j++ < 5){
 			multiple = multiple * i;
+			sum = sum + multiple;
 					
-		System.out.printf("%d ", multiple);
-
 			}
+		System.out.printf("%d ", sum);
+
 		}
 	}
 
