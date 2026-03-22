@@ -1,4 +1,4 @@
-package dayThree;
+package takeHomeAssessment.dayThree;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

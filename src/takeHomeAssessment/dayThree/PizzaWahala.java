@@ -15,6 +15,18 @@ public class PizzaWahala {
         scanner.nextLine();
         String pizzaType = scanner.nextLine();
 
+        int[] orderResult = calculateOrder(numberOfGuests, pizzaType);
+
+        System.out.println("---------- Order Summary ----------");
+        System.out.println("Number of boxes to buy : " + orderResult[0] + " boxes");
+        System.out.println("Left over slices       : " + orderResult[1] + " slices");
+        System.out.println("Total price            : " + orderResult[2]);
+
+        scanner.close();
+    }
+
+
+    public static int[] calculateOrder(double numberOfGuests,String pizzaType) {
         int slicesPerBox;
         int pricePerBox;
 
@@ -37,18 +49,14 @@ public class PizzaWahala {
                 break;
             default:
                 System.out.println("Invalid pizza type!");
-                return;
+                return null;
         }
 
         int numberOfBoxes = (int) Math.ceil( numberOfGuests / slicesPerBox);
         int totalSlices = numberOfBoxes * slicesPerBox;
-        int leftOverSlices = (int) (totalSlices - numberOfGuests);
+        int leftOverSlices = (int)  (totalSlices - numberOfGuests);
         int totalPrice = numberOfBoxes * pricePerBox;
 
-        System.out.println("---------- Order Summary ----------");
-        System.out.println("Number of boxes to buy : " + numberOfBoxes + " boxes");
-        System.out.println("Left over slices       : " + leftOverSlices + " slices");
-        System.out.println("Total price            : " + totalPrice);
-
-        scanner.close();
-    }}
+        return new int[]{numberOfBoxes, leftOverSlices,totalPrice};
+    }
+}
