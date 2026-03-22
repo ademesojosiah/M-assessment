@@ -2,7 +2,7 @@ package dayThree;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import take_home_assessment.dayThree.BackToSender;
+import takeHomeAssessment.dayThree.BackToSender;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
