@@ -79,7 +79,7 @@ public class CheckoutApp {
         scanner.close();
     }
 
-    private static double calculateSubTotal(int[] productQuantities, double[] productPricesPerUnit, int totalNumberOfProducts) {
+    public static double calculateSubTotal(int[] productQuantities, double[] productPricesPerUnit, int totalNumberOfProducts) {
         double subTotal = 0;
         for (int i = 0; i < totalNumberOfProducts; i++) {
             subTotal += productQuantities[i] * productPricesPerUnit[i];
@@ -87,7 +87,7 @@ public class CheckoutApp {
         return subTotal;
     }
 
-    private static double calculateDiscountAmount(double subTotal, double discountPercentage) {
+    public static double calculateDiscountAmount(double subTotal, double discountPercentage) {
         return subTotal * discountPercentage / 100;
     }
 
@@ -95,7 +95,7 @@ public class CheckoutApp {
         return subTotal * VAT_PERCENTAGE / 100;
     }
 
-    private static double calculateAmountDue(double subTotal, double discountAmount, double vatAmount) {
+    public static double calculateAmountDue(double subTotal, double discountAmount, double vatAmount) {
         return subTotal - discountAmount + vatAmount;
     }
 

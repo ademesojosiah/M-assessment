@@ -23,7 +23,7 @@ public class CreditCardValidator {
         return cardNumber.length() >= 13 && cardNumber.length() <= 16;
     }
 
-    private static String getCardType(String cardNumber) {
+    public static String getCardType(String cardNumber) {
         if (!hasValidLength(cardNumber)) {
             return "Invalid Card";
         }
@@ -74,7 +74,7 @@ public class CreditCardValidator {
         return sumOfOddPositionDigits;
     }
 
-    private static boolean isValidCreditCard(String cardNumber) {
+    public static boolean isValidCreditCard(String cardNumber) {
         if (!hasValidLength(cardNumber)) {
             return false;
         }
