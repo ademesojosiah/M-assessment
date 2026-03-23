@@ -41,7 +41,7 @@ public class StudentGradeApp {
         displayOverAllSummary(totalNumberOfSubject,totalNumberOfStudents,allStudentsScoresPerSubject);
     }
 
-    private static void displayOverAllSummary(int totalNumberOfSubject, int totalNumberOfStudents, int[][] allStudentsScoresPerSubject) {
+    public static void displayOverAllSummary(int totalNumberOfSubject, int totalNumberOfStudents, int[][] allStudentsScoresPerSubject) {
 
         int[] totalScoresPerStudent = calculateTotalScoreForEachStudent(allStudentsScoresPerSubject);
         int[] bestGraduatingStudent = calculateBestGraduatingStudent(totalScoresPerStudent);
@@ -75,7 +75,7 @@ public class StudentGradeApp {
         System.out.printf("Class Average score is: %.1f%n", classAverageScore);
         System.out.println(EQUAL_SIGNS);    }
 
-    private static int[] calculateEasiestSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubjects) {
+    public static int[] calculateEasiestSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubjects) {
         int[] totalPassesPerSubject = calculateTotalPassesPerSubject(allStudentsScoresPerSubject, totalNumberOfSubjects);
 
         int easiestSubject = 0;
@@ -92,7 +92,7 @@ public class StudentGradeApp {
 
     }
 
-    private static int[] calculateHardestSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubjects) {
+    public static int[] calculateHardestSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubjects) {
         int[] totalPassesPerSubject = calculateTotalPassesPerSubject(allStudentsScoresPerSubject, totalNumberOfSubjects);
 
         int hardestSubject = 0;
@@ -111,7 +111,7 @@ public class StudentGradeApp {
         return new int[]{numberOfFails, hardestSubject};
     }
 
-    private static int[] calculateTotalPassesPerSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubjects) {
+    public static int[] calculateTotalPassesPerSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubjects) {
         int[] totalPassesPerSubject = new int[totalNumberOfSubjects];
         for (int subjectIndex = 0; subjectIndex < totalNumberOfSubjects; subjectIndex++) {
             int passes = 0;
@@ -127,7 +127,7 @@ public class StudentGradeApp {
 
 
 
-    private static int[] calculateOverallLowestScore(int totalNumberOfStudents, int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
+    public static int[] calculateOverallLowestScore(int totalNumberOfStudents, int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
         int overallLowestScore = allStudentsScoresPerSubject[0][0];
         int overallLowestStudent = 0;
         int overallLowestSubject = 0;
@@ -147,7 +147,7 @@ public class StudentGradeApp {
         return new int[]{overallLowestScore, overallLowestSubject, overallLowestStudent};
     }
 
-    private static int[] calculateOverallHighestScore(int totalNumberOfStudents, int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
+    public static int[] calculateOverallHighestScore(int totalNumberOfStudents, int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
         int overallHighestScore = 0 ;
         int overallHighestStudent = 0 ;
         int overallHighestSubject = 0 ;
@@ -169,12 +169,12 @@ public class StudentGradeApp {
         return new int[]{overallHighestScore, overallHighestSubject,overallHighestStudent};
     }
 
-    private static double calculateClassAverageScore(int[] totalScoresPerStudent) {
+    public static double calculateClassAverageScore(int[] totalScoresPerStudent) {
         int totalScore = calculateClassTotalScore(totalScoresPerStudent);
         return (double) totalScore / totalScoresPerStudent.length;
     }
 
-    private static int calculateClassTotalScore(int[] totalScoresPerStudent) {
+    public static int calculateClassTotalScore(int[] totalScoresPerStudent) {
         int totalScore = 0;
         for (int score : totalScoresPerStudent) {
             totalScore += score;
@@ -182,7 +182,7 @@ public class StudentGradeApp {
         return totalScore;
     }
 
-    private static int[] calculateWorstGraduatingStudent(int[] totalScoresPerStudent) {
+    public static int[] calculateWorstGraduatingStudent(int[] totalScoresPerStudent) {
         int worstGraduatingStudent = 0 ;
         int worstScore = totalScoresPerStudent[0] ;
         for (int student = 0; student < totalScoresPerStudent.length; student++) {
@@ -196,7 +196,7 @@ public class StudentGradeApp {
         return new int[]{worstScore, worstGraduatingStudent};
     }
 
-    private static int[] calculateBestGraduatingStudent(int[] totalScoresPerStudent) {
+    public static int[] calculateBestGraduatingStudent(int[] totalScoresPerStudent) {
         int bestGraduatingStudent = 0;
         int bestScore = 0;
         for (int student = 0; student < totalScoresPerStudent.length; student++) {
@@ -210,7 +210,7 @@ public class StudentGradeApp {
         return new int[]{bestScore, bestGraduatingStudent};
     }
 
-    private static void displaySubjectSummary(int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
+    public static void displaySubjectSummary(int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
 
         int[] totalScoresPerSubject = calculateTotalScorePerSubject(allStudentsScoresPerSubject,totalNumberOfSubject);
         double[] averageScorePerSubject = calculateAverageScorePerSubject(allStudentsScoresPerSubject,totalNumberOfSubject);
@@ -241,7 +241,7 @@ public class StudentGradeApp {
 
     }
 
-    private static int[] calculateNumberOfPassAndFails(int[][] allStudentsScoresPerSubject, int subject) {
+    public static int[] calculateNumberOfPassAndFails(int[][] allStudentsScoresPerSubject, int subject) {
         int pass = 0;
         int fails = 0;
 
@@ -258,7 +258,7 @@ public class StudentGradeApp {
 
     }
 
-    private static int[] calculateTotalScorePerSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubject) {
+    public static int[] calculateTotalScorePerSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubject) {
         int[] totalScoresPerSubject = new int[totalNumberOfSubject];
         for(int subject = 0; subject < totalNumberOfSubject; subject++) {
             int totalScorePerSubject = 0;
@@ -271,7 +271,7 @@ public class StudentGradeApp {
         return totalScoresPerSubject;
     }
 
-    private static double[] calculateAverageScorePerSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubject) {
+    public static double[] calculateAverageScorePerSubject(int[][] allStudentsScoresPerSubject, int totalNumberOfSubject) {
         double[] averageScoresPerSubject = new double[totalNumberOfSubject];
         for(int subject = 0; subject < totalNumberOfSubject; subject++) {
             double totalScorePerSubject = 0;
@@ -284,7 +284,7 @@ public class StudentGradeApp {
         return averageScoresPerSubject;
     }
 
-    private static int[] calculateHighestScoringStudent(int[][] allStudentsScoresPerSubject, int subject) {
+    public static int[] calculateHighestScoringStudent(int[][] allStudentsScoresPerSubject, int subject) {
         int highestScoringStudent = 0;
         int highestScore = 0;
         for (int student = 0; student < allStudentsScoresPerSubject.length; student++) {
@@ -299,7 +299,7 @@ public class StudentGradeApp {
     }
 
 
-    private static int[] calculateLowestScoringStudent(int[][] allStudentsScoresPerSubject, int subject) {
+    public static int[] calculateLowestScoringStudent(int[][] allStudentsScoresPerSubject, int subject) {
         int lowestScoringStudent = 0 ;
         int lowestScore = allStudentsScoresPerSubject[0][subject] ;
         for (int student = 0; student < allStudentsScoresPerSubject.length; student++) {
@@ -313,7 +313,7 @@ public class StudentGradeApp {
         return new int[]{lowestScore, lowestScoringStudent};
     }
 
-    private static void displayStudentScoreTable(int totalNumberOfSubject,int totalNumberOfStudents, int[][] allStudentsScoresPerSubject) {
+    public static void displayStudentScoreTable(int totalNumberOfSubject,int totalNumberOfStudents, int[][] allStudentsScoresPerSubject) {
         System.out.println(EQUAL_SIGNS);
         System.out.print("STUDENT   ");
         for(int subject = 1; subject <= totalNumberOfSubject ; subject++){
@@ -342,7 +342,7 @@ public class StudentGradeApp {
 
     }
 
-    private static int[] calculateEachStudentPosition(int[] totalScoresPerStudent) {
+    public static int[] calculateEachStudentPosition(int[] totalScoresPerStudent) {
         int[] studentPosition = new int[totalScoresPerStudent.length];
 
         for(int student = 0; student < totalScoresPerStudent.length ; student++){
@@ -359,7 +359,7 @@ public class StudentGradeApp {
         return studentPosition;
     }
 
-    private static int[] calculateTotalScoreForEachStudent(int[][] allStudentsScoresPerSubject) {
+    public static int[] calculateTotalScoreForEachStudent(int[][] allStudentsScoresPerSubject) {
         int[] totalScorePerStudent = new int[allStudentsScoresPerSubject.length];
         for(int student = 0; student < allStudentsScoresPerSubject.length ; student++){
             totalScorePerStudent[student] = calculateStudentTotalScore(allStudentsScoresPerSubject[student]);
@@ -367,12 +367,12 @@ public class StudentGradeApp {
         return totalScorePerStudent;
     }
 
-    private static double calculateStudentAverageScore(int[] allStudentsScoresAcrossAllSubjects) {
+    public static double calculateStudentAverageScore(int[] allStudentsScoresAcrossAllSubjects) {
         int totalScore = calculateStudentTotalScore(allStudentsScoresAcrossAllSubjects);
         return (double) totalScore / allStudentsScoresAcrossAllSubjects.length;
     }
 
-    private static int calculateStudentTotalScore(int[] allStudentsScoresAcrossAllSubjects) {
+    public static int calculateStudentTotalScore(int[] allStudentsScoresAcrossAllSubjects) {
         int totalScore = 0;
         for (int allStudentsScoresAcrossAllSubject : allStudentsScoresAcrossAllSubjects) {
             totalScore += allStudentsScoresAcrossAllSubject;
@@ -380,7 +380,7 @@ public class StudentGradeApp {
         return totalScore;
     }
 
-    private static void collectStudentScores(Scanner scanner, int totalNumberOfStudents, int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
+    public static void collectStudentScores(Scanner scanner, int totalNumberOfStudents, int totalNumberOfSubject, int[][] allStudentsScoresPerSubject) {
         for(int student = 1 ; student <= totalNumberOfStudents ; student++ ) {
             for(int subject = 1 ; subject <= totalNumberOfSubject ; subject++ ) {
                 System.out.println("Entering score for student " + student);
