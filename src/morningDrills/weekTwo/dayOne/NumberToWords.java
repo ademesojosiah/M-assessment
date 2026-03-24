@@ -1,4 +1,4 @@
-package morningDrills.weekTwo;
+package morningDrills.weekTwo.dayOne;
 
 import java.util.Scanner;
 
@@ -25,8 +25,19 @@ public class NumberToWords {
             return convertLessThanTenToWord(number);
         } else if (number < 100) {
             return convertLessThanHundredToWord(number);
+        }else if (number < 1000) {
+            return convertLessThanThousandToWord(number);
         }
+
         return "Invalid number";
+    }
+
+    private static String convertLessThanThousandToWord(int number) {
+        int thousand = number / 1000;
+        int hundred = number % 1000;
+
+        String hundredInWords = (hundred > 0) ? convertLessThanHundredToWord(thousand) : "";
+        return ONES[thousand+1] + hundredInWords;
     }
 
     private static String convertLessThanHundredToWord(int number) {

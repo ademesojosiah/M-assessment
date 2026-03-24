@@ -1,4 +1,4 @@
-package morningDrills.weekTwo;
+package morningDrills.weekTwo.dayOne;
 
 import org.junit.jupiter.api.Test;
 
