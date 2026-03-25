@@ -6,14 +6,10 @@ public class Ac extends Bike{
     public Ac() {
     }
 
+    @Override
     public void turnOn(){
        temperature = 16;
        super.turnOn();
-    }
-
-    public void turnOff(){
-        temperature = 16;
-        super.turnOff();
     }
 
     public int getTemperature() {
@@ -25,9 +21,13 @@ public class Ac extends Bike{
             return;
         }
         int temp = temperature + 1;
+        validateTemperature(temp);
+    }
+
+    private void validateTemperature(int temp) {
         if (temp <= 32 && temp >= 16) {
             temperature = temp;
-        };
+        }
     }
 
     public void decreaseTemperature() {
@@ -35,8 +35,6 @@ public class Ac extends Bike{
             return;
         }
         int temp = temperature - 1;
-        if (temp <= 32 && temp >= 16) {
-            temperature = temp;
-        }
+        validateTemperature(temp);
     }
 }

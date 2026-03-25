@@ -66,4 +66,15 @@ public class AcTest {
 
 
     }
+
+    @Test
+    void decreaseTemperatureBelow16_NothingHappens(){
+        Ac ac = new Ac();
+        ac.turnOn();
+        assertTrue(ac.isOn());
+        assertEquals(16,ac.getTemperature());
+        ac.decreaseTemperature();
+
+        assertEquals(16,ac.getTemperature());
+    }
 }
