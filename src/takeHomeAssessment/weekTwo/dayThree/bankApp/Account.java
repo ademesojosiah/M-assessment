@@ -5,14 +5,24 @@ import takeHomeAssessment.weekTwo.dayThree.bankApp.exceptions.InvalidAmountExcep
 import takeHomeAssessment.weekTwo.dayThree.bankApp.exceptions.InvalidPinException;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Account {
     private BigDecimal balance;
     private String pin;
-    int accountNumber;
+    private String accountNumber;
+    private String accountName;
 
     public Account(String pin) {
         this.pin = pin;
+        this.balance = new BigDecimal(0);
+        this.accountNumber = UUID.randomUUID().toString();
+    }
+
+    public Account(String name ,String pin, String accountNumber) {
+       this.accountName = name;
+        this.pin = pin;
+        this.accountNumber = accountNumber;
         this.balance = new BigDecimal(0);
     }
 
@@ -20,8 +30,17 @@ public class Account {
         return balance;
     }
 
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
     public void deposit(BigDecimal amount, String pin) {
         validate(pin);
+        validate(amount);
+        this.balance = this.balance.add(amount);
+    }
+
+    public void depositFromBank(BigDecimal amount) {
         validate(amount);
         this.balance = this.balance.add(amount);
     }
