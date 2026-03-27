@@ -8,14 +8,20 @@ import java.util.List;
 
 public class Bank {
     private String bankName;
+    private String bankCode;
     private List<Account> accounts;
-    public Bank(String bankName) {
+    public Bank(String bankName, String bankCode) {
         this.bankName = bankName;
         this.accounts = new ArrayList<Account>();
+        this.bankCode = bankCode;
     }
 
     public String getBankName() {
         return bankName;
+    }
+
+    public String getBankCode() {
+        return bankCode;
     }
 
     public List<Account> getAccounts() {

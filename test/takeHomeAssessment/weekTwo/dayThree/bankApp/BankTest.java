@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.sql.SQLOutput;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,7 +15,7 @@ public class BankTest {
 
     @BeforeEach
     void setUp() {
-        gtBank = new Bank("GTB");
+        gtBank = new Bank("GTB","058");
     }
 
     @Test
